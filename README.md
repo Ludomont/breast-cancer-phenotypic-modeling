@@ -1,5 +1,5 @@
 # Master's Thesis | Modeling Phenotypic Transitions in Breast Cancer 
-**Research Internship at [University Name], Oslo | NEOLETEXE Clinical Trial Analysis**
+**Research Internship at the Oslo Center for Biostatistics and Epidemiology,University of Oslo | NEOLETEXE Clinical Trial Analysis**
 
 ### Project Overview
 This project investigates the escape mechanisms of **ER+ breast cancer cells** under hormonal treatment. While estrogen deprivation initially induces quiescence, a subset of cells eventually resumes proliferation, leading to potential resistance. 
