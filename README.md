@@ -1,29 +1,18 @@
-# Master's Thesis | Modeling Phenotypic Transitions in Breast Cancer 
-**Research Internship at the Oslo Center for Biostatistics and Epidemiology,University of Oslo | NEOLETEXE Clinical Trial Analysis**
+# Breast Cancer Phenotypic Transitions | Oslo Master's Thesis
+**Modeling ER+ cancer cell dynamics under hormonal treatment (NEOLETEXE Trial)**
 
-### Project Overview
-This project investigates the escape mechanisms of **ER+ breast cancer cells** under hormonal treatment. While estrogen deprivation initially induces quiescence, a subset of cells eventually resumes proliferation, leading to potential resistance. 
+This repository contains the computational framework used to model the escape mechanisms of breast cancer cells from quiescence to a proliferative state.
 
-Using single-cell transcriptomic data from **18 patients** (NEOLETEXE trial), I developed a mathematical framework to model the transition between Proliferative (P) and Quiescent (Q) states.
+### Repository Structure
+*   `simulate_data.ipynb`: Script for generating synthetic data based on the P-Q transition model.
+*   `optimization_simulate_data.ipynb`: Implementation of optimization algorithms to test the model's ability to recover parameters from simulated datasets.
+*   `optimization_experimental_data.ipynb`: Application of the mathematical model to real-world patient data from the NEOLETEXE trial.
+*   `*.csv` files: Datasets containing volume measurements and clinical data points used for model calibration.
 
-### Mathematical Modeling
-The core of the analysis involves a system of Ordinary Differential Equations (ODEs) to capture the dynamics of cell state transitions:
+### The Mathematical Model
+The transition between Proliferative (P) and Quiescent (Q) cell populations is modeled using the following system of ODEs:
 
 $$\frac{dP}{dT} = (u_p - \alpha)P + \beta Q$$
 $$\frac{dQ}{dT} = (u_q - \beta)Q + \alpha P$$
 
-**Parameters:**
-*   $\alpha$: Transition rate from Proliferative to Quiescent.
-*   $\beta$: Transition rate from Quiescent to Proliferative (Escape/Resistance rate).
-*   $u_p$: Net growth rate of proliferative cells.
-*   $u_q$: Net death rate of quiescent cells.
-
-### Computational Workflow
-*   **scRNA-seq Processing:** QC, normalization, and clustering of patient-derived samples.
-*   **State Identification:** Defining P and Q phenotypes based on transcriptomic signatures (e.g., cell cycle scoring).
-*   **Parameter Estimation:** Integrating single-cell snapshots with the mathematical model to estimate transition rates ($\alpha, \beta$).
-*   **Clinical Correlation:** Linking model parameters to patient response within the NEOLETEXE trial.
-
-### Tools Used
-*   **Language:** Python / R
-*   **Libraries:** Scanpy/Seurat for scRNA-seq, SciPy/DifferentialEquations.jl for modeling.
+The goal of the optimization scripts is to estimate the transition rates ($\alpha$ and $\beta$) to identify patients at higher risk of developing resistance (high $\beta$).
