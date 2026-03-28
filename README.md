@@ -1,4 +1,4 @@
-# Breast Cancer Phenotypic Transitions | Oslo Master's Thesis
+# Breast Cancer Phenotypic Transitions | Master's Thesis at OCBE, University of Oslo
 **Modeling ER+ cancer cell dynamics under hormonal treatment (NEOLETEXE Trial)**
 
 This repository contains the computational framework used to model the escape mechanisms of breast cancer cells from quiescence to a proliferative state.
